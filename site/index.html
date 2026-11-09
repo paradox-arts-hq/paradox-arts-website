@@ -1192,6 +1192,8 @@
   html[data-theme="noir"] img{ filter:grayscale(1) contrast(1.15) brightness(.92); }
   /* client work always shows in its real colours: project tiles, case studies and the image lightbox */
   html[data-theme="noir"] :is(.overlay, .img-lightbox) img{ filter:none; }
+  /* the Founding Logic halves keep the logo's own colours, cream and orange */
+  html[data-theme="noir"] .pi-shape img{ filter:none; }
   /* alt theme contrast: small orange labels use the brighter neon orange (5.3:1+), the drag hint is brighter */
   html[data-theme="noir"] :is(.p-num, .faq-head .eyebrow){ color:#FF5500 !important; opacity:1 !important; }
   html[data-theme="noir"] .pi-hint{ opacity:.8; }
