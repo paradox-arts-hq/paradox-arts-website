@@ -1,0 +1,22 @@
+{
+  "name": "Paradox Arts",
+  "short_name": "Paradox Arts",
+  "description": "Strategic branding and rebrands for startups. Lagos, Nigeria.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#F1DAC4",
+  "theme_color": "#161B33",
+  "icons": [
+    {
+      "src": "logo/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "logo/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

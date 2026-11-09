@@ -1,0 +1,134 @@
+IMAGES THE WEBSITE EXPECTS (paths are relative to the HTML file)
+
+Targets: project covers and gallery images max 1800 px on the long edge, JPEG quality about 80, under 250 KB each where possible.
+Logos and small marks: keep as PNG or SVG, under 60 KB. Social preview image: logo/og-image.jpg at exactly 1200 x 630, under 300 KB.
+
+about/  (2 files)
+  about/paradox-art-business-card-scene.jpg
+  about/paradox-art-mark-detail.jpg
+
+ca/  (15 files)
+  ca/ca-doyouknow-google-algorithm.jpg
+  ca/ca-doyouknow-kindness.jpg
+  ca/ca-intelligence-bodysmart-intro.jpg
+  ca/ca-intelligence-carousel.jpg
+  ca/ca-quote-gallup.jpg
+  ca/ca-quote-peter-drucker.jpg
+  ca/ca-quote-steve-jobs.jpg
+  ca/ca-selftalk-carousel.jpg
+  ca/ca-selftalk-end.jpg
+  ca/ca-series-hr-hustle-ep1.jpg
+  ca/ca-series-hr-practices-ep4.jpg
+  ca/ca-service-payroll.jpg
+  ca/ca-team-bonding-cta.jpg
+  ca/ca-team-testimonial-dami.jpg
+  ca/ca-welcome-team.jpg
+
+jbb/  (4 files)
+  jbb/jbb-flyer-table-water.jpg
+  jbb/jbb-logo-icon.png
+  jbb/jbb-logo-lockup.png
+  jbb/jbb-logo-primary.png
+
+jobrown/  (6 files)
+  jobrown/jobrown-card-back.jpg
+  jobrown/jobrown-flyer-front.jpg
+  jobrown/jobrown-letterhead.jpg
+  jobrown/jobrown-logo-concept.jpg
+  jobrown/jobrown-logo-icon.png
+  jobrown/jobrown-mockup-collection.jpg
+
+lcf/  (19 files)
+  lcf/lcf-bible-1.jpg
+  lcf/lcf-bible-2.jpg
+  lcf/lcf-carousel-1.jpg
+  lcf/lcf-carousel-2.jpg
+  lcf/lcf-carousel-3.jpg
+  lcf/lcf-carousel-4.jpg
+  lcf/lcf-carousel-5.jpg
+  lcf/lcf-logo-exploration.jpg
+  lcf/lcf-praise-testimony-a.jpg
+  lcf/lcf-praise-testimony-b.jpg
+  lcf/lcf-screen-closing.jpg
+  lcf/lcf-screen-newsletter.jpg
+  lcf/lcf-screen-opening-prayer.jpg
+  lcf/lcf-screen-socials.jpg
+  lcf/lcf-screen-theword.jpg
+  lcf/lcf-screen-welcome.jpg
+  lcf/lcf-screen-worship.jpg
+  lcf/lcf-season-dominion.jpg
+  lcf/lcf-youth-flyer.jpg
+
+logo/  (6 files)
+  logo/logo-half-left-cream.png
+  logo/logo-half-left-navy.png
+  logo/logo-half-right-navy.png
+  logo/logo-half-right-orange.png
+  logo/logo-mark-cream.png
+  logo/logo-mark-navy.png
+
+mac/  (7 files)
+  mac/mac-app-icon.jpg
+  mac/mac-cap.jpg
+  mac/mac-id-card.jpg
+  mac/mac-logo-icon.jpg
+  mac/mac-logo-primary.jpg
+  mac/mac-website-detail.jpg
+  mac/mac-website-home.jpg
+
+mv/  (5 files)
+  mv/mv-mark-variations.png
+  mv/mv-palette.png
+  mv/mv-submark.png
+  mv/mv-typography.png
+  mv/mv-wordmark-lockup.png
+
+prime-ignites/  (10 files)
+  prime-ignites/pi-background-blend.jpg
+  prime-ignites/pi-favicon.png
+  prime-ignites/pi-gradients.jpg
+  prime-ignites/pi-hive-pattern.jpg
+  prime-ignites/pi-letterhead.jpg
+  prime-ignites/pi-logo-colour-variants.jpg
+  prime-ignites/pi-mark-construction.jpg
+  prime-ignites/pi-type-sora.jpg
+  prime-ignites/pi-website-detail.jpg
+  prime-ignites/pi-website-home.jpg
+
+ration/  (15 files)
+  ration/ration-coming-soon.jpg
+  ration/ration-guide-back.jpg
+  ration/ration-guide-colour-access.jpg
+  ration/ration-guide-colour-palette-title.jpg
+  ration/ration-guide-colour-swatches.jpg
+  ration/ration-guide-front.jpg
+  ration/ration-guide-logo.jpg
+  ration/ration-guide-type-detail.jpg
+  ration/ration-guide-type-title.jpg
+  ration/ration-guide-values-voice.jpg
+  ration/ration-primary-logo.svg
+  ration/ration-primary-orange.jpg
+  ration/ration-submark-orange-a.jpg
+  ration/ration-submark-orange-glossy.jpg
+  ration/ration-submark.svg
+
+studio-wall/  (15 files)
+  studio-wall/sw-be-a-man-cover.jpg
+  studio-wall/sw-deetee-creations.jpg
+  studio-wall/sw-efik-cuisine-logo-mockup.jpg
+  studio-wall/sw-efik-cuisine-logo.jpg
+  studio-wall/sw-efik-cuisine-menu-dark.jpg
+  studio-wall/sw-efik-cuisine-menu-pink.jpg
+  studio-wall/sw-events-by-daphne-merch.jpg
+  studio-wall/sw-exposure-muse-unilag-flyer.jpg
+  studio-wall/sw-lola-blue-novel-covers.jpg
+  studio-wall/sw-medalarm-concept.jpg
+  studio-wall/sw-medserve-flyer.jpg
+  studio-wall/sw-medserve-letterhead.jpg
+  studio-wall/sw-offspring-montessori-flyer.jpg
+  studio-wall/sw-wisdomgate-church-flyer.jpg
+  studio-wall/sw-yebafol-logo.jpg
+
+MASCOT (already optimised, in the mascot/ folder): mascot-about.webp, mascot-lab.webp, mascot-faq.webp
+APP ICONS (generated from the favicon): logo/apple-touch-icon.png, icon-192.png, icon-512.png, favicon-64.png
+MUSIC: sub_clair-lofi-background-586104.mp3 (loaded only when the sound toggle is switched on)

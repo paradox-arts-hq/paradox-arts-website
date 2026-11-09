@@ -1,0 +1,25 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "paradox-site",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "C:\\Users\\tjeff\\OneDrive\\Pictures\\Gigs\\Paradox Tools\\Confindential\\Website\\.claude\\tools\\serve.js",
+        "C:\\Users\\tjeff\\OneDrive\\Pictures\\Gigs\\Paradox Tools\\Confindential\\Website\\site",
+        "8080"
+      ],
+      "port": 8080
+    },
+    {
+      "name": "paradox-prod",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "C:\\Users\\tjeff\\OneDrive\\Pictures\\Gigs\\Paradox Tools\\Confindential\\Website\\.claude\\tools\\prodserve.js",
+        "C:\\Users\\tjeff\\OneDrive\\Pictures\\Gigs\\Paradox Tools\\Confindential\\Website\\site",
+        "8095"
+      ],
+      "port": 8095
+    }
+  ]
+}

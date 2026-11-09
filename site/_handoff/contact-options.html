@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact Section Options</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..800&family=Pacifico&display=swap" rel="stylesheet">
+<style>
+  :root{ --navy:#161B33; --orange:#CC5500; --orange-light:#DD6A1A; --cream:#F1DAC4; --lavender:#A69CAC; }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{ font-family:'Archivo',sans-serif; background:#E9E4DF; color:var(--navy); padding:32px 16px 80px; }
+  .page-head{ max-width:1100px; margin:0 auto 28px; }
+  .page-head h1{ font-size:28px; font-weight:800; text-transform:uppercase; letter-spacing:-.01em; }
+  .page-head p{ margin-top:8px; font-size:15px; line-height:1.55; max-width:760px; }
+  .opt{ max-width:1100px; margin:0 auto 40px; }
+  .opt-label{ display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 14px; margin-bottom:10px; }
+  .opt-label h2{ font-size:20px; font-weight:800; }
+  .tag{ font-size:12px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; padding:4px 10px; border-radius:999px; }
+  .tag--fail{ background:#7A1F1F; color:#fff; }
+  .tag--pass{ background:#1F5A34; color:#fff; }
+  .tag--rec{ background:var(--navy); color:var(--cream); }
+  .opt-note{ font-size:14px; line-height:1.55; margin-top:10px; max-width:820px; }
+  .opt-note b{ font-weight:800; }
+
+  /* ---------- shared contact mock (scaled-down version of the live section) ---------- */
+  .cta{ text-align:center; padding:64px 24px 56px; border-radius:14px; overflow:hidden; }
+  .cta h3{ font-weight:800; text-transform:uppercase; line-height:.94; letter-spacing:-.02em; font-size:clamp(34px,6vw,64px); }
+  .intro{ max-width:480px; margin:16px auto 0; font-size:15px; line-height:1.6; }
+  .cta-link{ margin-top:28px; display:inline-flex; gap:12px; font-size:18px; font-weight:800; text-transform:uppercase; letter-spacing:.04em; border-bottom:3px solid currentColor; padding-bottom:6px; }
+  .steps{ margin-top:26px; display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:10px 16px; }
+  .step{ display:inline-flex; align-items:center; gap:8px; font-size:12.5px; }
+  .num{ width:22px; height:22px; border-radius:50%; border:1.5px solid currentColor; display:inline-flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; }
+  .arrow{ font-size:12px; }
+  .fallback{ margin:16px auto 0; font-size:12.5px; }
+  .fallback u{ text-underline-offset:2px; }
+  .eyebrow{ margin-top:28px; font-size:12px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; display:flex; justify-content:center; align-items:center; gap:8px; }
+  .eyebrow::before{ content:""; width:5px; height:5px; border-radius:50%; background:currentColor; }
+  .connect{ margin-top:16px; display:flex; justify-content:center; flex-wrap:wrap; gap:8px 10px; }
+  .connect span{ font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:9px 18px; border-radius:999px; border:1px solid currentColor; }
+
+  /* NOW: the live section, faded navy on Burnt Orange */
+  .now{ background:var(--orange); color:var(--navy); }
+  .now .intro{ opacity:.75; } .now .step{ opacity:.8; } .now .arrow{ opacity:.4; } .now .fallback{ opacity:.55; } .now .connect{ opacity:.75; }
+  .now .connect span{ border-color:rgba(22,27,51,.28); background:rgba(22,27,51,.1); }
+
+  /* OPTION 1: orange stays; small text moves onto a cream card */
+  .o1{ background:var(--orange); color:var(--navy); }
+  .o1 .cta-link{ font-size:19px; }
+  .o1 .card{ background:var(--cream); color:var(--navy); max-width:720px; margin:32px auto 0; border-radius:16px; padding:26px 22px 24px; box-shadow:0 14px 30px rgba(22,27,51,.18); }
+  .o1 .card .intro{ margin-top:0; }
+  .o1 .card .connect span{ border-color:var(--navy); }
+
+  /* OPTION 2: orange top band + navy bottom band */
+  .o2{ padding:0; }
+  .o2 .band-top{ background:var(--orange); color:var(--navy); padding:64px 24px 44px; }
+  .o2 .band-top .cta-link{ font-size:19px; }
+  .o2 .band-bottom{ background:var(--navy); color:var(--cream); padding:34px 24px 44px; }
+  .o2 .band-bottom .intro{ margin-top:0; }
+  .o2 .band-bottom .num{ border-color:var(--orange); }
+  .o2 .band-bottom .connect span{ border-color:rgba(241,218,196,.6); }
+
+  /* OPTION 3: everything stays on orange, all text large (19px bold or bigger) */
+  .o3{ background:var(--orange); color:var(--navy); }
+  .o3 .intro{ font-size:20px; font-weight:700; line-height:1.45; max-width:560px; }
+  .o3 .cta-link{ font-size:19px; }
+  .o3 .step{ font-size:19px; font-weight:700; }
+  .o3 .num{ width:28px; height:28px; font-size:14px; }
+  .o3 .arrow{ font-size:19px; font-weight:700; }
+  .o3 .fallback{ font-size:19px; font-weight:700; max-width:none; }
+  .o3 .eyebrow{ font-size:19px; }
+  .o3 .connect span{ font-size:19px; padding:10px 20px; }
+
+  /* OPTION 4: lighter orange for this section only, navy at full strength */
+  .o4{ background:var(--orange-light); color:var(--navy); }
+  .o4 .connect span{ border-color:var(--navy); }
+
+  .swatches{ display:flex; gap:10px; margin-top:10px; flex-wrap:wrap; }
+  .sw{ display:flex; align-items:center; gap:8px; font-size:13px; }
+  .sw i{ width:22px; height:22px; border-radius:6px; display:inline-block; border:1px solid rgba(0,0,0,.15); }
+  @media (max-width:640px){ .steps{ flex-direction:column; } .arrow{ display:none; } }
+</style>
+</head>
+<body>
+
+<header class="page-head">
+  <h1>Contact section: accessibility options</h1>
+  <p>Same content as the live section, shown at a smaller scale. Small text needs 4.5:1 contrast; large text (19px bold or 24px+) needs 3:1. Navy on Burnt Orange is 3.9:1.</p>
+</header>
+
+<!-- NOW -->
+<section class="opt">
+  <div class="opt-label"><h2>Now (for reference)</h2><span class="tag tag--fail">13 items fail</span></div>
+  <div class="cta now">
+    <h3>Bring Us The<br>Good Problem.</h3>
+    <p class="intro">For one focused project, an ongoing retainer, or a long-term creative and strategic partnership—bring us the good problem.</p>
+    <span class="cta-link">Start A Project →</span>
+    <div class="steps"><span class="step"><span class="num">1</span>Tell us who you are &amp; the good problem</span><span class="arrow">→</span><span class="step"><span class="num">2</span>We reply within 48 hours</span><span class="arrow">→</span><span class="step"><span class="num">3</span>We recommend the right engagement</span></div>
+    <p class="fallback">Prefer email? Write to us directly: <u>hq.paradoxarts@gmail.com</u></p>
+    <div class="eyebrow">Contact Us</div>
+    <div class="connect"><span>Email</span><span>WhatsApp</span><span>Instagram</span><span>TikTok</span><span>LinkedIn</span></div>
+  </div>
+  <p class="opt-note">Faded navy on orange: the small text measures 2.3–3.2:1 and the button 3.9:1 at 18px.</p>
+</section>
+
+<!-- OPTION 1 -->
+<section class="opt">
+  <div class="opt-label"><h2>Option 1: Orange section, cream card for the details</h2><span class="tag tag--pass">All pass</span><span class="tag tag--rec">Recommended</span></div>
+  <div class="cta o1">
+    <h3>Bring Us The<br>Good Problem.</h3>
+    <span class="cta-link">Start A Project →</span>
+    <div class="card">
+      <p class="intro">For one focused project, an ongoing retainer, or a long-term creative and strategic partnership—bring us the good problem.</p>
+      <div class="steps"><span class="step"><span class="num">1</span>Tell us who you are &amp; the good problem</span><span class="arrow">→</span><span class="step"><span class="num">2</span>We reply within 48 hours</span><span class="arrow">→</span><span class="step"><span class="num">3</span>We recommend the right engagement</span></div>
+      <p class="fallback">Prefer email? Write to us directly: <u>hq.paradoxarts@gmail.com</u></p>
+      <div class="eyebrow">Contact Us</div>
+      <div class="connect"><span>Email</span><span>WhatsApp</span><span>Instagram</span><span>TikTok</span><span>LinkedIn</span></div>
+    </div>
+  </div>
+  <p class="opt-note"><b>Keeps:</b> the orange field, headline and button. <b>Changes:</b> the small text moves onto a cream card (navy on cream 12.6:1) and the button grows from 18px to 19px. Follows your brand guide's own rule.</p>
+</section>
+
+<!-- OPTION 2 -->
+<section class="opt">
+  <div class="opt-label"><h2>Option 2: Orange top band, navy bottom band</h2><span class="tag tag--pass">All pass</span></div>
+  <div class="cta o2">
+    <div class="band-top">
+      <h3>Bring Us The<br>Good Problem.</h3>
+      <span class="cta-link">Start A Project →</span>
+    </div>
+    <div class="band-bottom">
+      <p class="intro">For one focused project, an ongoing retainer, or a long-term creative and strategic partnership—bring us the good problem.</p>
+      <div class="steps"><span class="step"><span class="num">1</span>Tell us who you are &amp; the good problem</span><span class="arrow">→</span><span class="step"><span class="num">2</span>We reply within 48 hours</span><span class="arrow">→</span><span class="step"><span class="num">3</span>We recommend the right engagement</span></div>
+      <p class="fallback">Prefer email? Write to us directly: <u>hq.paradoxarts@gmail.com</u></p>
+      <div class="eyebrow">Contact Us</div>
+      <div class="connect"><span>Email</span><span>WhatsApp</span><span>Instagram</span><span>TikTok</span><span>LinkedIn</span></div>
+    </div>
+  </div>
+  <p class="opt-note"><b>Keeps:</b> an orange headline band. <b>Changes:</b> the details sit full width on navy in cream (12.6:1), flowing into the navy footer below.</p>
+</section>
+
+<!-- OPTION 3 -->
+<section class="opt">
+  <div class="opt-label"><h2>Option 3: All on orange, all text large</h2><span class="tag tag--pass">All pass</span></div>
+  <div class="cta o3">
+    <h3>Bring Us The<br>Good Problem.</h3>
+    <p class="intro">For one focused project, an ongoing retainer, or a long-term creative and strategic partnership—bring us the good problem.</p>
+    <span class="cta-link">Start A Project →</span>
+    <div class="steps"><span class="step"><span class="num">1</span>Tell us who you are &amp; the good problem</span><span class="arrow">→</span><span class="step"><span class="num">2</span>We reply within 48 hours</span><span class="arrow">→</span><span class="step"><span class="num">3</span>We recommend the right engagement</span></div>
+    <p class="fallback">Prefer email? Write to us directly: <u>hq.paradoxarts@gmail.com</u></p>
+    <div class="eyebrow">Contact Us</div>
+    <div class="connect"><span>Email</span><span>WhatsApp</span><span>Instagram</span><span>TikTok</span><span>LinkedIn</span></div>
+  </div>
+  <p class="opt-note"><b>Keeps:</b> the full orange section. <b>Changes:</b> every line becomes 19–20px bold full-strength navy (3.9:1 passes for large text). Heavier and louder; the copy may want trimming.</p>
+</section>
+
+<!-- OPTION 4 -->
+<section class="opt">
+  <div class="opt-label"><h2>Option 4: Lighter orange for this section</h2><span class="tag tag--pass">All pass</span></div>
+  <div class="cta o4">
+    <h3>Bring Us The<br>Good Problem.</h3>
+    <p class="intro">For one focused project, an ongoing retainer, or a long-term creative and strategic partnership—bring us the good problem.</p>
+    <span class="cta-link">Start A Project →</span>
+    <div class="steps"><span class="step"><span class="num">1</span>Tell us who you are &amp; the good problem</span><span class="arrow">→</span><span class="step"><span class="num">2</span>We reply within 48 hours</span><span class="arrow">→</span><span class="step"><span class="num">3</span>We recommend the right engagement</span></div>
+    <p class="fallback">Prefer email? Write to us directly: <u>hq.paradoxarts@gmail.com</u></p>
+    <div class="eyebrow">Contact Us</div>
+    <div class="connect"><span>Email</span><span>WhatsApp</span><span>Instagram</span><span>TikTok</span><span>LinkedIn</span></div>
+  </div>
+  <div class="swatches"><span class="sw"><i style="background:#CC5500"></i>Brand Burnt Orange #CC5500</span><span class="sw"><i style="background:#DD6A1A"></i>This section #DD6A1A</span></div>
+  <p class="opt-note"><b>Keeps:</b> today's layout and sizes. <b>Changes:</b> the background shifts slightly lighter (about 5:1 with full-strength navy). Not a colour in your brand guide.</p>
+</section>
+
+</body>
+</html>
