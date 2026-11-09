@@ -7,6 +7,7 @@ It is a static site with no build step. Everything the host serves is in `site/`
 ## Folders
 
 - `site/`: the website. `index.html` holds the page, its styles and scripts, and the case-study data (`window.PX_PROJECTS`). Images sit in one folder per project.
+- `site/guides/`: the client brand guides (PDF) that the case studies link to.
 - `site/_headers`: caching rules that Cloudflare Pages and Netlify apply. The host reads it and doesn't publish it.
 - `_handoff/`: working files from the original handoff, plus spare photos the site no longer uses. Not published.
 - `.claude/tools/`: two small Node servers for previewing the site locally.

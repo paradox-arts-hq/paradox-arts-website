@@ -5,7 +5,7 @@ const root = path.resolve(process.argv[2] || path.join(__dirname, '..', '..', 's
 const port = +process.argv[3] || 8080;
 const T = { '.html':'text/html; charset=utf-8', '.js':'text/javascript', '.css':'text/css', '.jpg':'image/jpeg', '.jpeg':'image/jpeg', '.png':'image/png',
   '.svg':'image/svg+xml', '.webp':'image/webp', '.woff2':'font/woff2', '.mp3':'audio/mpeg', '.xml':'application/xml', '.txt':'text/plain',
-  '.webmanifest':'application/manifest+json', '.json':'application/json' };
+  '.webmanifest':'application/manifest+json', '.json':'application/json', '.pdf':'application/pdf' };
 http.createServer((q, r) => {
   let p = decodeURIComponent(q.url.split('?')[0]); if (p.endsWith('/')) p += 'index.html';
   const f = path.join(root, p); if (!f.startsWith(root)) { r.writeHead(403); return r.end(); }

@@ -62,6 +62,20 @@ Also verified:
 - **Ready to publish as is:** `_handoff/` moved out of `site/`, the two spare About photos into
   `_handoff/spare-images/`, and `site/_headers` added with the caching rules.
 
+## Brand guides (done 10 Nov 2026)
+- The "View Full Brand Guideline (PDF)" buttons in the Prime Ignites, Limitless CF and Mac Ignites case
+  studies pointed at files that were never added, so they would have opened the 404 page. They now open the
+  guides in `site/guides/`, exact copies of your Figma exports: `prime-ignites-brand-guide.pdf` (15 MB,
+  18 pages), `limitless-cf-brand-guide.pdf` (7 MB, 19 pages), `mac-ignites-brand-guide.pdf` (12 MB, 13 pages).
+- Browsers keep them for a day, so a re-exported guide saved under the same name reaches visitors the next day.
+- Worth knowing:
+  - The last page of the Mac Ignites and Limitless guides gives +234 810 515 6132 as the studio's contact;
+    the site uses +234 706 526 1941.
+  - Their built-in titles ("Slide 01", "1", "Limitless NGO") come from the first frame's name in Figma and
+    can show as the tab title in some browsers; rename that frame before the next export.
+  - They are large on mobile data; a compressed export would open faster.
+  - Check that each client is happy for their full guide to be public.
+
 ## Analytics, 404 page, privacy note and new images (done 9 Nov 2026)
 - **Analytics (Umami Cloud, free plan):** `site/analytics.js` loads Umami only on paradox-arts.com and
   www.paradox-arts.com (Website ID added 9 Nov 2026; every setting it uses is confirmed in Umami's docs). No cookies, Do Not Track respected, and jumps within the page don't count
