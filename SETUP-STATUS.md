@@ -1,7 +1,9 @@
-# Paradox Arts website: setup status (updated 9 Nov 2026)
+# Paradox Arts website: setup status (updated 10 Nov 2026)
 
-The upload-ready site is in `site/`. Upload the **contents** of `site/` (everything except `_handoff/`)
-to the host's web root. `_handoff/` holds the original notes, mock-ups and source files.
+The site is in `site/`: publish that folder as it is. On Cloudflare Pages or Netlify, connect the private
+GitHub repo (github.com/hqparadoxarts/paradox-arts-website) with no build command and `site` as the output
+folder; every push to `main` then goes live. `_handoff/`, at the top of the repo, holds the original notes,
+mock-ups, source files and spare photos, and is not published.
 
 ## Final scorecard (9 Nov 2026)
 
@@ -30,9 +32,10 @@ Also verified:
 
 ## Launch checklist
 1. **Hosting / domain** for paradox-arts.com, on **HTTPS**.
-2. **Compression and caching** on the host, as tested: gzip or Brotli for HTML/CSS/JS/SVG/XML, and long
-   caching for images and fonts (`Cache-Control: public, max-age=31536000`), `no-cache` for `index.html`.
-   Most hosts (Netlify, Vercel, Cloudflare Pages) do this by default. Without it, mobile scores drop.
+2. **Compression and caching:** hosts compress text files by default, and `site/_headers` gives Cloudflare
+   Pages and Netlify the tested caching: images, fonts and the music for a year, the statistics script for a
+   day, pages checked on every visit. On any other host, copy those rules into its settings. Because images
+   are cached for a year, a replaced image needs a new file name (and `index.html` updated to match).
 3. **Google Search Console:** verify the domain and submit `https://www.paradox-arts.com/sitemap.xml`
    (step by step in the review doc, see "Copy rewrites" below).
 4. **Google Business Profile** for Paradox Arts, Lagos: the biggest local-SEO lever for searches
@@ -48,6 +51,16 @@ Also verified:
    unknown addresses; on other hosts, set it as the custom error page.
 9. **Privacy note:** done (`site/privacy.html`, linked from the footer and under the enquiry form). Check
    that keeping enquiries up to 12 months suits you.
+
+## Code on GitHub and hosting prep (done 9–10 Nov 2026)
+- **GitHub:** private repo github.com/hqparadoxarts/paradox-arts-website, branch `main`, pushed from this
+  folder with GitHub CLI (signed in as hqparadoxarts). Code only: the "Website Images" originals and the zips
+  stay on this computer (`.gitignore`). To publish a change, commit and push; once a host is connected, it
+  goes live by itself.
+- **Norton:** this PC's Norton Antivirus scans secure connections, which Git's own certificate list rejects,
+  so this repo checks certificates against the Windows store (`http.sslBackend=schannel`). Verification stays on.
+- **Ready to publish as is:** `_handoff/` moved out of `site/`, the two spare About photos into
+  `_handoff/spare-images/`, and `site/_headers` added with the caching rules.
 
 ## Analytics, 404 page, privacy note and new images (done 9 Nov 2026)
 - **Analytics (Umami Cloud, free plan):** `site/analytics.js` loads Umami only on paradox-arts.com and
@@ -91,8 +104,8 @@ Also verified:
 - **About inset:** your mark-on-grid artwork replaces the pale mark close-up: a 500 px square crop
   inside the grid (`about/paradox-arts-mark-grid.png`, 5 KB) in the inset, and your full 1080x1918
   artwork (`about/paradox-arts-mark-grid-full.png`, 9 KB, white top edge trimmed) in the image viewer.
-- `site/about/` still holds two images the page no longer uses (`paradox-art-business-card-scene.jpg`,
-  `paradox-art-mark-detail.jpg`); leave them out of the upload or keep them as spares.
+- The two images the page no longer uses (`paradox-art-business-card-scene.jpg`, `paradox-art-mark-detail.jpg`)
+  moved to `_handoff/spare-images/` on 10 Nov 2026.
 - Checked: every cursor state in both themes, the trailing dot (appears on movement, hides when the
   pointer leaves the page), drags can't leave the drag cursor stuck, no console errors, 0 accessibility
   issues in both themes, 0 HTML errors, Lighthouse desktop 100/100/100/100. Mobile read 95–97 in late
@@ -127,7 +140,7 @@ Second round, same day, from your edits in the doc:
 - **Pricing FAQ:** unchanged, as you asked ("Maintain the copy").
 - **About:** your portrait (`about/founder-oluwadamilare-taiwo-600/900/1200.jpg`, 32–96 KB) replaces the
   business-card photo in the main frame and opens full size with a caption. The business-card photo
-  stays in `site/about/`, unused. Search engines also get your photo and title in the structured data.
+  is kept, unused, in `_handoff/spare-images/`. Search engines also get your photo and title in the structured data.
 - The Ongoing Partner rewording waits in the doc as a suggestion (the Limitless CF one was withdrawn).
 
 Timing FAQ (your call: change it): "How long does a project take?" now answers from the card lengths
@@ -202,5 +215,5 @@ A phone held sideways (844×390) still needs a scroll to reach the buttons; noth
   contact details, and the Mac card is already represented by its sample layout.
 - The Shop With The Stars, Events by Daphne and Medalarm identity boards (Events by Daphne and Medalarm
   already appear in the Archive), and other Paradox mockups (laptop sticker, magazine covers).
-- `site/about/` still holds two images the page no longer uses (`paradox-art-business-card-scene.jpg`,
-  `paradox-art-mark-detail.jpg`).
+- Two former About images (`paradox-art-business-card-scene.jpg`, `paradox-art-mark-detail.jpg`), now in
+  `_handoff/spare-images/`.

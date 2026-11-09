@@ -1,0 +1,38 @@
+# Caching rules for the live site. Cloudflare Pages and Netlify both read this file; it is not published.
+# Pages (.html) are not listed: the host checks for a fresh copy on every visit, so text changes show at once.
+#
+# Images, fonts and the music stay in visitors' browsers for a year (what the speed tests measured).
+# So to REPLACE an image, save it under a NEW file name and update index.html to match:
+# a file that keeps its old name can stay stale for returning visitors.
+# A new image folder needs its own block below.
+
+/about/*
+  Cache-Control: public, max-age=31536000, immutable
+/ca/*
+  Cache-Control: public, max-age=31536000, immutable
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+/jbb/*
+  Cache-Control: public, max-age=31536000, immutable
+/jobrown/*
+  Cache-Control: public, max-age=31536000, immutable
+/lcf/*
+  Cache-Control: public, max-age=31536000, immutable
+/logo/*
+  Cache-Control: public, max-age=31536000, immutable
+/mac/*
+  Cache-Control: public, max-age=31536000, immutable
+/mascot/*
+  Cache-Control: public, max-age=31536000, immutable
+/prime-ignites/*
+  Cache-Control: public, max-age=31536000, immutable
+/ration/*
+  Cache-Control: public, max-age=31536000, immutable
+/studio-wall/*
+  Cache-Control: public, max-age=31536000, immutable
+/sub_clair-lofi-background-586104.mp3
+  Cache-Control: public, max-age=31536000, immutable
+
+# The statistics script may change, so browsers keep it for a day at most.
+/analytics.js
+  Cache-Control: public, max-age=86400
