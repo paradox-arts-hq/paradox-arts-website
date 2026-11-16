@@ -528,7 +528,9 @@
 
   /* ---------- about ---------- */
   .about{ background:var(--cream); padding:110px var(--margin); }
-  .about-grid{ display:grid; grid-template-columns:.9fr 1.1fr; gap:60px; align-items:start; }
+  /* the portrait column scales with the screen but stays modest (300–460 px); the text keeps a readable line length */
+  .about-grid{ display:grid; grid-template-columns:minmax(0, clamp(300px, 30vw, 460px)) minmax(0, 1fr); gap:clamp(40px, 6vw, 110px); align-items:start; }
+  .about-copy{ max-width:700px; }
   .about h2{ font-weight:800; text-transform:uppercase; font-size:clamp(30px,4.6vw,52px); letter-spacing:-.02em; line-height:1; }
   .about .who{ font-size:14.5px; line-height:1.75; margin-top:20px; opacity:.85; }
 
@@ -551,7 +553,8 @@
   .about-media{ position:relative; }
   .about-portrait{ position:relative; aspect-ratio:4/5; }
   .about-detail{ position:absolute; right:-22px; bottom:-26px; width:46%; aspect-ratio:1/1; border:6px solid var(--cream); box-shadow:0 14px 30px rgba(22,27,51,.22); }
-  @media (max-width:980px){ .about-grid{ grid-template-columns:1fr; } }
+  /* one column: the portrait stays at most 400 px wide instead of stretching across the screen */
+  @media (max-width:980px){ .about-grid{ grid-template-columns:minmax(0, 1fr); } .about-media{ width:min(100%, 400px); } }
   @media (max-width:640px){ .about-detail{ width:40%; right:-12px; bottom:-16px; } }
 
   /* ---------- vision & mission ---------- */
@@ -2365,7 +2368,7 @@ window.PX_RENDER = function(id, slugs, offset){
   <div class="about-grid" style="margin-top:26px;">
     <div class="about-media">
       <div class="about-portrait mask-reveal">
-        <img src="about/founder-oluwadamilare-taiwo-900.jpg" srcset="about/founder-oluwadamilare-taiwo-600.jpg 600w, about/founder-oluwadamilare-taiwo-900.jpg 900w, about/founder-oluwadamilare-taiwo-1200.jpg 1200w" sizes="(max-width: 980px) 92vw, 42vw" width="1200" height="1500" alt="Oluwadamilare Taiwo, founder of Paradox Arts" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 20%;" loading="lazy" decoding="async"
+        <img src="about/founder-oluwadamilare-taiwo-900.jpg" srcset="about/founder-oluwadamilare-taiwo-600.jpg 600w, about/founder-oluwadamilare-taiwo-900.jpg 900w, about/founder-oluwadamilare-taiwo-1200.jpg 1200w" sizes="(max-width: 480px) 88vw, (max-width: 980px) 400px, 460px" width="1200" height="1500" alt="Oluwadamilare Taiwo, founder of Paradox Arts" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 20%;" loading="lazy" decoding="async"
           data-full="about/founder-oluwadamilare-taiwo-1200.jpg"
           data-lb-eyebrow="About Paradox Arts" data-lb-title="Oluwadamilare Taiwo"
           data-lb-desc="The person behind every project on this page: brand strategist and designer, working with founders since 2017.">

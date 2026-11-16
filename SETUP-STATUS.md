@@ -1,4 +1,4 @@
-# Paradox Arts website: setup status (updated 14 Nov 2026)
+# Paradox Arts website: setup status (updated 16 Nov 2026)
 
 The site is in `site/`: publish that folder as it is. On Cloudflare Pages or Netlify, connect the private
 GitHub repo (github.com/hqparadoxarts/paradox-arts-website) with no build command and `site` as the output
@@ -61,6 +61,12 @@ Also verified:
   so this repo checks certificates against the Windows store (`http.sslBackend=schannel`). Verification stays on.
 - **Ready to publish as is:** `_handoff/` moved out of `site/`, the two spare About photos into
   `_handoff/spare-images/`, and `site/_headers` added with the caching rules.
+
+## About photo size (done 16 Nov 2026)
+- The founder portrait no longer fills its column. Beside the text it is 300–460 px wide (432×540 on a 1440
+  laptop, was 536×671); when the layout is one column it is at most 400 px wide (400×500 at 968 px, was
+  837×1046, nearly a full screen). Phones keep it at the full text width (343×429 at 390 px).
+- The About text is capped at 700 px wide, so its lines don't grow longer where the photo used to be.
 
 ## Marquee line (done 14 Nov 2026)
 - The orange scrolling band now reads "A system that knows when to break its own rules" (was "Build the
