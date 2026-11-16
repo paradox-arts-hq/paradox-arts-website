@@ -1,4 +1,4 @@
-# Paradox Arts website: setup status (updated 10 Nov 2026)
+# Paradox Arts website: setup status (updated 14 Nov 2026)
 
 The site is in `site/`: publish that folder as it is. On Cloudflare Pages or Netlify, connect the private
 GitHub repo (github.com/hqparadoxarts/paradox-arts-website) with no build command and `site` as the output
@@ -61,6 +61,13 @@ Also verified:
   so this repo checks certificates against the Windows store (`http.sslBackend=schannel`). Verification stays on.
 - **Ready to publish as is:** `_handoff/` moved out of `site/`, the two spare About photos into
   `_handoff/spare-images/`, and `site/_headers` added with the caching rules.
+
+## Marquee line (done 14 Nov 2026)
+- The orange scrolling band now reads "A system that knows when to break its own rules" (was "Build the
+  system, then break it"): it says what the client gets, and no longer sounds like "we break things".
+- It loops four copies instead of two, so no screen up to 2560 px wide sees the empty strip the old loop
+  left at the end of each pass, and it scrolls at the old reading speed. With reduced motion turned on,
+  the line shows once, centred and wrapping.
 
 ## Brand guides (done 10 Nov 2026)
 - The "View Full Brand Guideline (PDF)" buttons in the Prime Ignites, Limitless CF and Mac Ignites case
@@ -199,7 +206,9 @@ A phone held sideways (844×390) still needs a scroll to reach the buttons; noth
 - **Accessibility:** valid "Ways To Start" cards (real headings + buttons), named pop-ups, FAQ answers
   linked to their questions, form errors announced and tied to fields, lab cards are real toggles once
   unlocked, larger footer tap targets, skip link focus, alt-theme label contrast.
-- **Content:** case-study numbers now match their tiles; footer reads © 2017–current year.
+- **Content:** case-study numbers now match their tiles. Footer, changed 16 Nov 2026: © 2026, the site's
+  first year, then © 2026–2027 and so on by itself. The hero keeps "Since 2017" (your practice) and the
+  founder's note keeps "formalised it in February 2025".
 
 ## Earlier rounds (7 Nov 2026)
 - Contact section: option 1 of 4 (orange field, details on a cream card). Mock-ups in `_handoff/contact-options.html`.
