@@ -1,11 +1,4 @@
-# Kept on this computer only: the original images and archives (site/ has the web copies)
-/Website Images/
-*.zip
-
 # System files
 Thumbs.db
 desktop.ini
 .DS_Store
-
-# Local Claude Code settings
-.claude/settings.local.json
