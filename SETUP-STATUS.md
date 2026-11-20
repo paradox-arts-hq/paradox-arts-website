@@ -1,7 +1,7 @@
 # Paradox Arts website: setup status (updated 20 Nov 2026)
 
 The site is in `site/`: publish that folder as it is. On Cloudflare Pages or Netlify, connect the private
-GitHub repo (github.com/hqparadoxarts/paradox-arts-website) with no build command and `site` as the output
+GitHub repo (github.com/paradox-arts-hq/paradox-arts-website) with no build command and `site` as the output
 folder; every push to `main` then goes live. `_handoff/`, at the top of the repo, holds the original notes,
 mock-ups, source files and spare photos, and is not published.
 
@@ -53,8 +53,11 @@ Also verified:
    that keeping enquiries up to 12 months suits you.
 
 ## Code on GitHub and hosting prep (done 9–10 Nov 2026)
-- **GitHub:** private repo github.com/hqparadoxarts/paradox-arts-website, branch `main`, pushed from this
-  folder with GitHub CLI (signed in as hqparadoxarts). Code only: the "Website Images" originals and the zips
+- **GitHub:** private repo github.com/paradox-arts-hq/paradox-arts-website, branch `main`, in the
+  paradox-arts-hq organisation (moved there from your personal account on 20 Nov 2026 so Oladimeji,
+  olasunkanmi-oladimeji3, could be an Admin on it). Pushed from this folder with GitHub CLI, signed in as
+  hqparadoxarts, the organisation's owner. When connecting Cloudflare, give its GitHub app access to the
+  paradox-arts-hq organisation, not your personal account. Code only: the "Website Images" originals and the zips
   stay on this computer (`.gitignore`). To publish a change, commit and push; once a host is connected, it
   goes live by itself.
 - **Norton:** this PC's Norton Antivirus scans secure connections, which Git's own certificate list rejects,
