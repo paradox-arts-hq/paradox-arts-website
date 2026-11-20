@@ -1,4 +1,4 @@
-# Paradox Arts website: setup status (updated 16 Nov 2026)
+# Paradox Arts website: setup status (updated 20 Nov 2026)
 
 The site is in `site/`: publish that folder as it is. On Cloudflare Pages or Netlify, connect the private
 GitHub repo (github.com/hqparadoxarts/paradox-arts-website) with no build command and `site` as the output
@@ -61,6 +61,20 @@ Also verified:
   so this repo checks certificates against the Windows store (`http.sslBackend=schannel`). Verification stays on.
 - **Ready to publish as is:** `_handoff/` moved out of `site/`, the two spare About photos into
   `_handoff/spare-images/`, and `site/_headers` added with the caching rules.
+
+## Pre-launch check and Mac Ignites link (20 Nov 2026)
+- **Check passed:** all 160 files the pages use are present; 0 HTML errors on the three pages; 0 accessibility
+  issues in both themes (axe-core 4.10.2, WCAG 2.2 AA); no console errors, failed loads or sideways scroll;
+  title, description, canonical, 1200×630 share image, structured data, sitemap and manifest in place.
+- **macignites.com is offline:** the domain is registered (Namecheap name servers) but has no address
+  records, so it loads for nobody. Until it's back, the Mac Ignites case study hides its "Visit
+  macignites.com" button, and the outcome reads "…one system clients now meet in person: staff ID cards and
+  branded apparel." To restore: in `index.html`, un-comment the `links:` line in the Mac Ignites entry and
+  put the site back in the outcome ("…meet everywhere: macignites.com, staff ID cards and branded apparel.").
+- Sitemap: the homepage's last-changed date is now 20 Nov 2026.
+- Still for you to click once: the LinkedIn company page and the Pixabay music credit (both block automated
+  checks). Three small logo files are unused (`logo/favicon.png`, `logo/logo-half-left-navy.png`,
+  `logo/logo-half-right-navy.png`, 26 KB); harmless if published.
 
 ## About photo size (done 16 Nov 2026)
 - The founder portrait no longer fills its column. Beside the text it is 300–460 px wide (432×540 on a 1440
