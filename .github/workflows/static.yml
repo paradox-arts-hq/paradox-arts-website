@@ -25,6 +25,12 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Build the case-study pages
+        # Rebuilds work/<slug>/ and the sitemap from the case-study data in index.html, so the pages always
+        # match the pop-ups even if someone forgot to run the script. If it fails, the copies committed in the
+        # repo are published instead.
+        run: node .github/scripts/build-case-pages.mjs
+        continue-on-error: true
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

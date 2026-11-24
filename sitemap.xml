@@ -2,12 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.paradox-arts.com/</loc>
-    <lastmod>2026-11-21</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.paradox-arts.com/privacy.html</loc>
     <lastmod>2026-11-09</lastmod>
+  </url>
+  <url>
+    <loc>https://www.paradox-arts.com/work/prime-ignites/</loc>
+  </url>
+  <url>
+    <loc>https://www.paradox-arts.com/work/jbb-global-services/</loc>
+  </url>
+  <url>
+    <loc>https://www.paradox-arts.com/work/mac-ignites/</loc>
+  </url>
+  <url>
+    <loc>https://www.paradox-arts.com/work/jobrown-global-venture/</loc>
+  </url>
+  <url>
+    <loc>https://www.paradox-arts.com/work/limitless-cf/</loc>
+  </url>
+  <url>
+    <loc>https://www.paradox-arts.com/work/capital-africa/</loc>
+  </url>
+  <url>
+    <loc>https://www.paradox-arts.com/work/ration/</loc>
+  </url>
+  <url>
+    <loc>https://www.paradox-arts.com/work/archive/</loc>
   </url>
 </urlset>
