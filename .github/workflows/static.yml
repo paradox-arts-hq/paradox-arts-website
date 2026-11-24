@@ -15,10 +15,10 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  # Two jobs, like GitHub's own Pages templates. In one job, the deploy step sometimes asked for the
+  # upload a split second before GitHub had registered it and failed ("No artifacts named
+  # github-pages", 20 and 24 Nov 2026). Starting a second job gives GitHub those few seconds.
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -30,6 +30,14 @@ jobs:
         with:
           # the website is the top of the repo (index.html is there)
           path: '.'
+
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
