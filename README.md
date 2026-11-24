@@ -8,6 +8,7 @@ A static site. Everything in this folder is the website, and `index.html` is the
 
 - `index.html`: the homepage, with its styles, scripts and the case-study data (`window.PX_PROJECTS`). `privacy.html` and `404.html` are the other two hand-made pages.
 - `work/`: one generated page per case study (`work/<slug>/index.html`), plus their shared `case-study.css` and `case-study.js`. Don't edit these by hand.
+- `work/index.html`, `services/`, `process/`, `lab/`, `about/`: generated short addresses for the homepage sections (paradox-arts.com/services and so on). Each forwards to the homepage at that section. The nav and footer links point at them, and the script reads the list from those links.
 - `images/`: every picture, one folder per project (`prime-ignites/`, `lcf/`, `mac/`, `jbb/`, `jobrown/`, `ration/`, `ca/`, `studio-wall/`), plus `about/`, `logo/` and `mascot/`.
 - `fonts/`: the self-hosted fonts and their licences.
 - `guides/`: the client brand guides (PDF) that the case studies link to.

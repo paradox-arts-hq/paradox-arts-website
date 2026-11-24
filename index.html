@@ -1659,11 +1659,13 @@
   </a>
   <nav aria-label="Primary">
     <ul class="nav-links">
-      <li><a href="#work" class="magnetic">Work</a></li>
-      <li><a href="#services" class="magnetic">Services</a></li>
-      <li><a href="#process" class="magnetic">Process</a></li>
-      <li><a href="#lab" class="magnetic">Lab</a></li>
-      <li><a href="#about" class="magnetic">About</a></li>
+      <!-- Each button has its own address (/services/ etc., a small page that opens the homepage at that section).
+           On the homepage a click glides to the section instead (data-section, see the in-page link handler). -->
+      <li><a href="/work/" data-section="work" class="magnetic">Work</a></li>
+      <li><a href="/services/" data-section="services" class="magnetic">Services</a></li>
+      <li><a href="/process/" data-section="process" class="magnetic">Process</a></li>
+      <li><a href="/lab/" data-section="lab" class="magnetic">Lab</a></li>
+      <li><a href="/about/" data-section="about" class="magnetic">About</a></li>
       <li>
         <button class="sound-toggle magnetic" id="soundToggle" aria-pressed="false">
           <span class="dot"></span><span id="soundLabel">Sound / Off</span>
@@ -2575,9 +2577,9 @@ window.PX_RENDER = function(id, slugs, offset){
       </span></span>
     </div>
     <div class="foot-links">
-      <a href="#work" class="magnetic">Work</a>
-      <a href="#services" class="magnetic">Services</a>
-      <a href="#about" class="magnetic">About</a>
+      <a href="/work/" data-section="work" class="magnetic">Work</a>
+      <a href="/services/" data-section="services" class="magnetic">Services</a>
+      <a href="/about/" data-section="about" class="magnetic">About</a>
       <a href="mailto:hq.paradoxarts@gmail.com" class="magnetic">Contact</a>
       <a href="privacy.html" class="magnetic">Privacy</a>
     </div>
@@ -3053,9 +3055,10 @@ window.PX_RENDER = function(id, slugs, offset){
   }
   document.addEventListener('click', (e)=>{
     if(e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-    const a = e.target.closest('a[href^="#"]');
+    const a = e.target.closest('a[href^="#"], a[data-section]');
     if(!a) return;
-    const hash = a.getAttribute('href');
+    // nav and footer links point at a section's own address (/services/); on this page they glide like "#services"
+    const hash = a.dataset.section ? '#' + a.dataset.section : a.getAttribute('href');
     if(hash.length < 2 || hash.includes('/')) return;   // "#" alone, and case-study routes (#work/slug), keep their own handling
     const target = document.getElementById(decodeURIComponent(hash.slice(1)));
     if(!target) return;
@@ -3074,6 +3077,17 @@ window.PX_RENDER = function(id, slugs, offset){
     target.scrollIntoView({ behavior:'instant', block:'start' });
     settleOn(target, 0);
   });
+  // Arriving on a section address (/#services, which /services/ forwards to): the browser's own jump can stop
+  // short while the sections above are still rendering, so settle on the section once the page has loaded.
+  (function(){
+    const hash = location.hash;
+    if(hash.length < 2 || hash.includes('/')) return;
+    let target = null;
+    try{ target = document.getElementById(decodeURIComponent(hash.slice(1))); }catch(e){ return; }
+    if(!target) return;
+    const land = ()=>{ target.scrollIntoView({ behavior:'instant', block:'start' }); settleOn(target, 0); };
+    if(document.readyState === 'complete') land(); else window.addEventListener('load', land, { once:true });
+  })();
 
   /* ---------------------------------------------------------
      6. HERO — slight scroll distortion (skew tied to velocity)
